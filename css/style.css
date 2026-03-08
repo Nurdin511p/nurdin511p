@@ -1,0 +1,165 @@
+/* ROOT VARIABLES - Tema Enterprise Portal */
+:root {
+  --primary-color: #2563eb;
+  --primary-dark: #1e40af;
+  --secondary-color: #64748b;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+  --bg-light: #f8fafc;
+  --white: #ffffff;
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}
+
+/* GLOBAL STYLES */
+body {
+  background-color: var(--bg-light);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #1e293b;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* AUTH CONTAINER (LOGIN/AKTIVASI) */
+.auth-container {
+  max-width: 900px;
+  margin: auto;
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  display: flex;
+  min-height: 550px;
+}
+
+.auth-visual {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+  color: var(--white);
+  padding: 3.5rem;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.auth-visual::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);
+}
+
+.auth-form {
+  padding: 3.5rem;
+  width: 60%;
+  background: var(--white);
+}
+
+/* TABS (NAV PILLS) */
+.nav-pills {
+  background: #f1f5f9;
+  padding: 0.4rem;
+  border-radius: 0.8rem;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0.6rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-pills .nav-link.active {
+  background: var(--white);
+  color: var(--primary-color);
+  box-shadow: var(--shadow-md);
+}
+
+/* FORMS */
+.form-label {
+  color: #475569;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  padding: 0.75rem 1rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--border-color);
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.input-group-text {
+  background: transparent;
+  border-left: none;
+  color: var(--secondary-color);
+  border-color: var(--border-color);
+}
+
+/* BUTTONS */
+.btn-auth {
+  padding: 0.8rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+}
+
+.btn-auth:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+}
+
+/* DASHBOARD UTILS (Agar konsisten) */
+.dashboard-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dashboard-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.navbar-enterprise {
+  background: var(--white);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 1.5rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .auth-visual { width: 45%; padding: 2.5rem; }
+  .auth-form { width: 55%; padding: 2.5rem; }
+}
+
+@media (max-width: 768px) {
+  body { height: auto; align-items: flex-start; padding: 2rem 0; }
+  .auth-visual { display: none; }
+  .auth-form { width: 100%; padding: 2rem; }
+  .auth-container { margin: 1rem; border-radius: 1rem; }
+}
+
+/* ANIMATIONS */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
